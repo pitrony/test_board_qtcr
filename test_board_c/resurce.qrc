@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/pic">
+        <file>pic/1_d_cl_64.png</file>
+        <file>pic/1_d_op_64.png</file>
+        <file>pic/close_door.png</file>
+        <file>pic/lift_cab_64.png</file>
+        <file>pic/lift_cab_128.png</file>
+        <file>pic/lift_cab_512.png</file>
+        <file>pic/move_dwn.png</file>
+        <file>pic/move_stop.png</file>
+        <file>pic/move_up.png</file>
+        <file>pic/open_door.png</file>
+    </qresource>
+</RCC>
