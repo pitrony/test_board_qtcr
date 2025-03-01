@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>frolov au</author>
  <class>Form_conf_speed</class>
- <widget class="QWidget" name="Form_conf_speed">
+ <widget class="QDialog" name="Form_conf_speed">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>996</width>
-    <height>739</height>
+    <width>905</width>
+    <height>675</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
   <property name="windowTitle">
-   <string>speed configure</string>
-  </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
+   <string>Form for configure</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background: rgb(85, 170, 127)</string>
@@ -28,27 +20,27 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>20</y>
+     <x>40</x>
+     <y>40</y>
      <width>531</width>
-     <height>321</height>
+     <height>401</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="9" column="0">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Max speed</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_h">
+    <item row="4" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_ret">
       <property name="text">
        <string> RH</string>
       </property>
-      <property name="checked">
-       <bool>true</bool>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="3">
+     <widget class="QRadioButton" name="radioButton_ry_h">
+      <property name="text">
+       <string> RY</string>
       </property>
       <property name="autoExclusive">
        <bool>false</bool>
@@ -68,10 +60,89 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_5">
+    <item row="5" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_c">
       <property name="text">
-       <string>Normal speed</string>
+       <string> RF</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>High speed</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_read">
+      <property name="text">
+       <string> RF</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_m">
+      <property name="text">
+       <string> RH</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_h">
+      <property name="text">
+       <string> RH</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QRadioButton" name="radioButton_ry_m">
+      <property name="text">
+       <string> RY</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Shaft revision</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_l">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="text">
+       <string> RF</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -82,27 +153,50 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Leveling</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_n">
+    <item row="8" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_h">
       <property name="text">
        <string> RF</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
       <property name="autoExclusive">
        <bool>false</bool>
       </property>
      </widget>
     </item>
-    <item row="7" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_n">
+    <item row="10" column="3">
+     <widget class="QRadioButton" name="radioButton_ry_read">
       <property name="text">
-       <string> RH</string>
+       <string> RY</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Normal speed</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QRadioButton" name="radioButton_ry_n">
+      <property name="text">
+       <string> RY</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_m">
+      <property name="text">
+       <string> RF</string>
       </property>
       <property name="checked">
        <bool>true</bool>
@@ -125,39 +219,6 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="3">
-     <widget class="QRadioButton" name="radioButton_ry_h">
-      <property name="text">
-       <string> RY</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_h">
-      <property name="text">
-       <string> RF</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_ret">
-      <property name="text">
-       <string> RH</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="3">
      <widget class="QRadioButton" name="radioButton_ry_ret">
       <property name="text">
@@ -168,25 +229,8 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="3">
-     <widget class="QRadioButton" name="radioButton_ry_m">
-      <property name="text">
-       <string> RY</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>High speed</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_m">
+    <item row="7" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_n">
       <property name="text">
        <string> RH</string>
       </property>
@@ -198,101 +242,21 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_m">
-      <property name="text">
-       <string> RF</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="3">
-     <widget class="QRadioButton" name="radioButton_ry_c">
-      <property name="text">
-       <string> RY</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>Speed setting</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Card revision</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="3">
-     <widget class="QRadioButton" name="radioButton_ry_n">
-      <property name="text">
-       <string> RY</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_c">
-      <property name="text">
-       <string> RF</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>30</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="3" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_f">
-      <property name="text">
-       <string> RF</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Return back</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="1">
      <widget class="QRadioButton" name="radioButton_rh_l">
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
+      <property name="text">
+       <string> RH</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_f">
       <property name="text">
        <string> RH</string>
       </property>
@@ -317,80 +281,10 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_l">
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_7">
       <property name="text">
-       <string> RF</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="2">
-     <widget class="QRadioButton" name="radioButton_rf_read">
-      <property name="text">
-       <string> RF</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Floor aproach</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="3">
-     <widget class="QRadioButton" name="radioButton_ry_f">
-      <property name="text">
-       <string> RY</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_f">
-      <property name="text">
-       <string> RH</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_c">
-      <property name="text">
-       <string> RH</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_10">
-      <property name="text">
-       <string>Shaft revision</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QRadioButton" name="radioButton_rh_sh">
-      <property name="text">
-       <string> RH</string>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
+       <string>Max speed</string>
       </property>
      </widget>
     </item>
@@ -407,6 +301,73 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="0">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>30</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="3">
+     <widget class="QRadioButton" name="radioButton_ry_f">
+      <property name="text">
+       <string> RY</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_f">
+      <property name="text">
+       <string> RF</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Speed setting</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Return back</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QRadioButton" name="radioButton_rf_n">
+      <property name="text">
+       <string> RF</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QRadioButton" name="radioButton_ry_c">
+      <property name="text">
+       <string> RY</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
     <item row="6" column="3">
      <widget class="QRadioButton" name="radioButton_ry_sh">
       <property name="text">
@@ -417,10 +378,41 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="3">
-     <widget class="QRadioButton" name="radioButton_ry_read">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string> RY</string>
+       <string>Leveling</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_c">
+      <property name="text">
+       <string> RH</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Card revision</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Floor aproach</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QRadioButton" name="radioButton_rh_sh">
+      <property name="text">
+       <string> RH</string>
       </property>
       <property name="autoExclusive">
        <bool>false</bool>
@@ -429,14 +421,218 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButtonOk">
+  <widget class="QLabel" name="label_fls">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>380</y>
-     <width>90</width>
+     <x>610</x>
+     <y>150</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Floors</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>180</y>
+     <width>51</width>
      <height>28</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_speed">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>190</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Speed</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_fls">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>140</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>6</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>7</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>8</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>9</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>11</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>13</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>14</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>15</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>16</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>17</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>18</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>19</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>20</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>21</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>22</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>23</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>24</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>25</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>26</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>27</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>28</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>29</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>30</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>31</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>32</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Ok">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>480</y>
+     <width>127</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background: rgb(255, 255, 127);
@@ -449,11 +645,14 @@ border: 1px solid white</string>
   <widget class="QPushButton" name="pushButton_cancel">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>380</y>
-     <width>90</width>
-     <height>28</height>
+     <x>430</x>
+     <y>480</y>
+     <width>128</width>
+     <height>25</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">background: rgb(255, 255, 127);
@@ -463,68 +662,78 @@ border: 1px solid white</string>
     <string>cancel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_fls">
+  <widget class="QLabel" name="label_saved">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>40</y>
-     <width>58</width>
-     <height>16</height>
+     <x>800</x>
+     <y>20</y>
+     <width>128</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Floors</string>
+    <string>not saved</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_speed">
+  <widget class="QLabel" name="label_board">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>80</y>
-     <width>58</width>
-     <height>16</height>
+     <x>610</x>
+     <y>220</y>
+     <width>70</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Speed</string>
+    <string>Board</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_fls">
+  <widget class="QListWidget" name="listWidget_board">
    <property name="geometry">
     <rect>
-     <x>730</x>
-     <y>30</y>
-     <width>41</width>
-     <height>28</height>
+     <x>680</x>
+     <y>210</y>
+     <width>221</width>
+     <height>31</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>HD X ONE</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>noname board</string>
+    </property>
+   </item>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>730</x>
-     <y>70</y>
-     <width>41</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
+  <zorder>gridLayoutWidget</zorder>
+  <zorder>label_fls</zorder>
+  <zorder>lineEdit_2</zorder>
+  <zorder>label_speed</zorder>
+  <zorder>listWidget_fls</zorder>
+  <zorder>pushButton_cancel</zorder>
+  <zorder>label_saved</zorder>
+  <zorder>label_board</zorder>
+  <zorder>listWidget_board</zorder>
+  <zorder>pushButton_Ok</zorder>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton_cancel</sender>
+   <sender>pushButton_Ok</sender>
    <signal>clicked()</signal>
-   <receiver>Form_conf_speed</receiver>
-   <slot>close()</slot>
+   <receiver>label_saved</receiver>
+   <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>254</x>
-     <y>393</y>
+     <x>353</x>
+     <y>492</y>
     </hint>
     <hint type="destinationlabel">
-     <x>311</x>
-     <y>234</y>
+     <x>863</x>
+     <y>31</y>
     </hint>
    </hints>
   </connection>

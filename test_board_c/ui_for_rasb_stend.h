@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'for_rasb_stendxGivmg.ui'
+** Form generated from reading UI file 'for_rasb_stendbWjgYS.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef FOR_RASB_STENDXGIVMG_H
-#define FOR_RASB_STENDXGIVMG_H
+#ifndef FOR_RASB_STENDBWJGYS_H
+#define FOR_RASB_STENDBWJGYS_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -79,6 +79,7 @@ public:
     QPushButton *pushButton_conf;
     QLabel *label_speed_2;
     QLabel *label_hdx;
+    QLabel *label_ligth;
     QMenuBar *menubar;
     QMenu *menumenu;
     QStatusBar *statusbar;
@@ -409,6 +410,9 @@ public:
         label_hdx->setObjectName("label_hdx");
         label_hdx->setGeometry(QRect(10, 30, 201, 31));
         label_hdx->setFont(font1);
+        label_ligth = new QLabel(centralwidget);
+        label_ligth->setObjectName("label_ligth");
+        label_ligth->setGeometry(QRect(520, 490, 128, 128));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -476,6 +480,7 @@ public:
         pushButton_conf->setText(QCoreApplication::translate("MainWindow", "&Configure", nullptr));
         label_speed_2->setText(QString());
         label_hdx->setText(QCoreApplication::translate("MainWindow", "Hedefsan HD X one", nullptr));
+        label_ligth->setText(QCoreApplication::translate("MainWindow", "ligth", nullptr));
         menumenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
@@ -487,4 +492,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // FOR_RASB_STENDXGIVMG_H
+#endif // FOR_RASB_STENDBWJGYS_H
