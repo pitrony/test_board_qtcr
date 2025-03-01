@@ -1,17 +1,18 @@
 /********************************************************************************
-** Form generated from reading UI file 'for_rasb_stendbWjgYS.ui'
+** Form generated from reading UI file 'for_rasb_stendzknCOu.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef FOR_RASB_STENDBWJGYS_H
-#define FOR_RASB_STENDBWJGYS_H
+#ifndef FOR_RASB_STENDZKNCOU_H
+#define FOR_RASB_STENDZKNCOU_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
@@ -77,9 +78,11 @@ public:
     QPushButton *pushButton_stop;
     QPushButton *pushButton_exit;
     QPushButton *pushButton_conf;
-    QLabel *label_speed_2;
+    QLabel *label_inf;
     QLabel *label_hdx;
     QLabel *label_ligth;
+    QLabel *label_speed_mc;
+    QCheckBox *checkBox_bus;
     QMenuBar *menubar;
     QMenu *menumenu;
     QStatusBar *statusbar;
@@ -88,7 +91,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1066, 784);
+        MainWindow->resize(1065, 784);
         MainWindow->setAutoFillBackground(false);
         MainWindow->setStyleSheet(QString::fromUtf8("background:rgb(255, 170, 127)"));
         actionconfig = new QAction(MainWindow);
@@ -319,7 +322,7 @@ public:
 
         label_speed = new QLabel(centralwidget);
         label_speed->setObjectName("label_speed");
-        label_speed->setGeometry(QRect(310, -10, 461, 61));
+        label_speed->setGeometry(QRect(310, -10, 461, 41));
         sizePolicy.setHeightForWidth(label_speed->sizePolicy().hasHeightForWidth());
         label_speed->setSizePolicy(sizePolicy);
         label_speed->setFont(font);
@@ -400,12 +403,12 @@ public:
         pushButton_conf = new QPushButton(centralwidget);
         pushButton_conf->setObjectName("pushButton_conf");
         pushButton_conf->setGeometry(QRect(290, 670, 90, 28));
-        label_speed_2 = new QLabel(centralwidget);
-        label_speed_2->setObjectName("label_speed_2");
-        label_speed_2->setGeometry(QRect(310, 40, 461, 61));
-        sizePolicy.setHeightForWidth(label_speed_2->sizePolicy().hasHeightForWidth());
-        label_speed_2->setSizePolicy(sizePolicy);
-        label_speed_2->setFont(font);
+        label_inf = new QLabel(centralwidget);
+        label_inf->setObjectName("label_inf");
+        label_inf->setGeometry(QRect(550, 40, 221, 61));
+        sizePolicy.setHeightForWidth(label_inf->sizePolicy().hasHeightForWidth());
+        label_inf->setSizePolicy(sizePolicy);
+        label_inf->setFont(font);
         label_hdx = new QLabel(centralwidget);
         label_hdx->setObjectName("label_hdx");
         label_hdx->setGeometry(QRect(10, 30, 201, 31));
@@ -413,10 +416,19 @@ public:
         label_ligth = new QLabel(centralwidget);
         label_ligth->setObjectName("label_ligth");
         label_ligth->setGeometry(QRect(520, 490, 128, 128));
+        label_speed_mc = new QLabel(centralwidget);
+        label_speed_mc->setObjectName("label_speed_mc");
+        label_speed_mc->setGeometry(QRect(310, 50, 101, 31));
+        sizePolicy.setHeightForWidth(label_speed_mc->sizePolicy().hasHeightForWidth());
+        label_speed_mc->setSizePolicy(sizePolicy);
+        label_speed_mc->setFont(font);
+        checkBox_bus = new QCheckBox(centralwidget);
+        checkBox_bus->setObjectName("checkBox_bus");
+        checkBox_bus->setGeometry(QRect(20, 70, 171, 27));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1066, 29));
+        menubar->setGeometry(QRect(0, 0, 1065, 29));
         menumenu = new QMenu(menubar);
         menumenu->setObjectName("menumenu");
         MainWindow->setMenuBar(menubar);
@@ -478,9 +490,11 @@ public:
         pushButton_stop->setText(QCoreApplication::translate("MainWindow", "S&top", nullptr));
         pushButton_exit->setText(QCoreApplication::translate("MainWindow", "&Exit", nullptr));
         pushButton_conf->setText(QCoreApplication::translate("MainWindow", "&Configure", nullptr));
-        label_speed_2->setText(QString());
+        label_inf->setText(QString());
         label_hdx->setText(QCoreApplication::translate("MainWindow", "Hedefsan HD X one", nullptr));
         label_ligth->setText(QCoreApplication::translate("MainWindow", "ligth", nullptr));
+        label_speed_mc->setText(QCoreApplication::translate("MainWindow", "\320\274/\321\201", nullptr));
+        checkBox_bus->setText(QCoreApplication::translate("MainWindow", "View bus messages", nullptr));
         menumenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
@@ -492,4 +506,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // FOR_RASB_STENDBWJGYS_H
+#endif // FOR_RASB_STENDZKNCOU_H

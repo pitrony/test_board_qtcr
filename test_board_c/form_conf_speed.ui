@@ -450,7 +450,7 @@
      <x>610</x>
      <y>190</y>
      <width>58</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -708,6 +708,105 @@ border: 1px solid white</string>
     </property>
    </item>
   </widget>
+  <widget class="QLabel" name="label_ratio">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>260</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ratio</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_ratio">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>250</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>1 : 1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1 : 2</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_shave">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>300</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Shave</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_shave">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>290</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>320 mm</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>200 mm</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_bus">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>340</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bus</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_bus">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>330</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>ModBus</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>CanBus</string>
+    </property>
+   </item>
+  </widget>
   <zorder>gridLayoutWidget</zorder>
   <zorder>label_fls</zorder>
   <zorder>lineEdit_2</zorder>
@@ -718,6 +817,12 @@ border: 1px solid white</string>
   <zorder>label_board</zorder>
   <zorder>listWidget_board</zorder>
   <zorder>pushButton_Ok</zorder>
+  <zorder>label_ratio</zorder>
+  <zorder>listWidget_ratio</zorder>
+  <zorder>label_shave</zorder>
+  <zorder>listWidget_shave</zorder>
+  <zorder>label_bus</zorder>
+  <zorder>listWidget_bus</zorder>
  </widget>
  <resources/>
  <connections>

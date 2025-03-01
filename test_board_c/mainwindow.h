@@ -33,6 +33,7 @@ private slots:
     void readSettings();
     void writeSettings();
     void on_radioButton_light_clicked();
+    void updateSpeed();  // Слот для обновления скорости
 
 private:
     Ui::MainWindow *ui;

@@ -7,6 +7,15 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QGraphicsOpacityEffect>
+//#include <wiringPi.h>
+//#include <wiringPiI2C.h>
+#include <QTimer>
+
+const int PULSES_PER_REVOLUTION = 2048;
+const double PULLEY_DIAMETER_1 = 320.0;
+const double PULLEY_DIAMETER_2 = 200.0;
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,6 +27,10 @@ MainWindow::MainWindow(QWidget *parent)
     , isMoving(false)
 {
     ui->setupUi(this);
+    // Инициализация таймера
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateSpeed);
+    timer->start(1000);  // Обновление каждую секунду
 
     // Настраиваем UI для формы конфигурации скорости
     ui_conf_speed->setupUi(form_conf_speed);
@@ -91,6 +104,43 @@ void MainWindow::on_radioButton_opcl_clicked()
     }
     repaint();
 }
+/*
+ speed
+double calculateLiftSpeed(int pulsesPerSecond, double pulleyDiameter, int gearRatio) {
+    double pulleyDiameterMeters = pulleyDiameter / 1000.0;
+    double circumference = M_PI * pulleyDiameterMeters;
+    double speed = (circumference * pulsesPerSecond) / (PULSES_PER_REVOLUTION * gearRatio);
+    speed = round(speed * 100) / 100;
+    return speed;
+}
+
+// Инициализация I2C
+int initI2C() {
+    int fd = wiringPiI2CSetup(PCF8574_ADDRESS);
+    if (fd == -1) {
+        qDebug() << "Ошибка инициализации I2C!";
+    }
+    return fd;
+}
+
+// Чтение данных с PCF8574
+int readI2CData(int fd) {
+    return wiringPiI2CRead(fd);
+}
+
+// Обновление скорости
+void MainWindow::updateSpeed() {
+    int fd = initI2C();
+    if (fd == -1) return;
+
+    int pulsesPerSecond = readI2CData(fd);
+    double pulleyDiameter = PULLEY_DIAMETER_1;
+    int gearRatio = 1;
+
+    double speed = calculateLiftSpeed(pulsesPerSecond, pulleyDiameter, gearRatio);
+    ui->label_speed->setText(QString::number(speed, 'f', 2) + " м/с");
+}
+*/
 
 void MainWindow::on_actionconfig_triggered()
 {

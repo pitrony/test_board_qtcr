@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1066</width>
+    <width>1065</width>
     <height>784</height>
    </rect>
   </property>
@@ -559,7 +559,7 @@
       <x>310</x>
       <y>-10</y>
       <width>461</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -837,12 +837,12 @@
      <string>&amp;Configure</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_speed_2">
+   <widget class="QLabel" name="label_inf">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>550</x>
       <y>40</y>
-      <width>461</width>
+      <width>221</width>
       <height>61</height>
      </rect>
     </property>
@@ -896,14 +896,53 @@
      <string>ligth</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_speed_mc">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>50</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>м/с</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_bus">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>171</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>View bus messages</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1066</width>
-     <height>28</height>
+     <width>1065</width>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menumenu">

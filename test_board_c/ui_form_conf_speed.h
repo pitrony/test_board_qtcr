@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'form_conf_speedrotwbD.ui'
+** Form generated from reading UI file 'form_conf_speedqbfHmK.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef FORM_CONF_SPEEDROTWBD_H
-#define FORM_CONF_SPEEDROTWBD_H
+#ifndef FORM_CONF_SPEEDQBFHMK_H
+#define FORM_CONF_SPEEDQBFHMK_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -75,6 +75,12 @@ public:
     QLabel *label_saved;
     QLabel *label_board;
     QListWidget *listWidget_board;
+    QLabel *label_ratio;
+    QListWidget *listWidget_ratio;
+    QLabel *label_shave;
+    QListWidget *listWidget_shave;
+    QLabel *label_bus;
+    QListWidget *listWidget_bus;
 
     void setupUi(QDialog *Form_conf_speed)
     {
@@ -325,7 +331,7 @@ public:
         lineEdit_2->setGeometry(QRect(680, 180, 51, 28));
         label_speed = new QLabel(Form_conf_speed);
         label_speed->setObjectName("label_speed");
-        label_speed->setGeometry(QRect(610, 190, 58, 16));
+        label_speed->setGeometry(QRect(610, 190, 58, 21));
         listWidget_fls = new QListWidget(Form_conf_speed);
         new QListWidgetItem(listWidget_fls);
         new QListWidgetItem(listWidget_fls);
@@ -383,6 +389,30 @@ public:
         new QListWidgetItem(listWidget_board);
         listWidget_board->setObjectName("listWidget_board");
         listWidget_board->setGeometry(QRect(680, 210, 221, 31));
+        label_ratio = new QLabel(Form_conf_speed);
+        label_ratio->setObjectName("label_ratio");
+        label_ratio->setGeometry(QRect(610, 260, 58, 16));
+        listWidget_ratio = new QListWidget(Form_conf_speed);
+        new QListWidgetItem(listWidget_ratio);
+        new QListWidgetItem(listWidget_ratio);
+        listWidget_ratio->setObjectName("listWidget_ratio");
+        listWidget_ratio->setGeometry(QRect(670, 250, 71, 31));
+        label_shave = new QLabel(Form_conf_speed);
+        label_shave->setObjectName("label_shave");
+        label_shave->setGeometry(QRect(610, 300, 58, 16));
+        listWidget_shave = new QListWidget(Form_conf_speed);
+        new QListWidgetItem(listWidget_shave);
+        new QListWidgetItem(listWidget_shave);
+        listWidget_shave->setObjectName("listWidget_shave");
+        listWidget_shave->setGeometry(QRect(670, 290, 101, 31));
+        label_bus = new QLabel(Form_conf_speed);
+        label_bus->setObjectName("label_bus");
+        label_bus->setGeometry(QRect(610, 340, 58, 16));
+        listWidget_bus = new QListWidget(Form_conf_speed);
+        new QListWidgetItem(listWidget_bus);
+        new QListWidgetItem(listWidget_bus);
+        listWidget_bus->setObjectName("listWidget_bus");
+        listWidget_bus->setGeometry(QRect(670, 330, 121, 31));
         gridLayoutWidget->raise();
         label_fls->raise();
         lineEdit_2->raise();
@@ -393,6 +423,12 @@ public:
         label_board->raise();
         listWidget_board->raise();
         pushButton_Ok->raise();
+        label_ratio->raise();
+        listWidget_ratio->raise();
+        label_shave->raise();
+        listWidget_shave->raise();
+        label_bus->raise();
+        listWidget_bus->raise();
 
         retranslateUi(Form_conf_speed);
         QObject::connect(pushButton_Ok, &QPushButton::clicked, label_saved, qOverload<>(&QLabel::hide));
@@ -522,6 +558,36 @@ public:
         ___qlistwidgetitem32->setText(QCoreApplication::translate("Form_conf_speed", "noname board", nullptr));
         listWidget_board->setSortingEnabled(__sortingEnabled1);
 
+        label_ratio->setText(QCoreApplication::translate("Form_conf_speed", "Ratio", nullptr));
+
+        const bool __sortingEnabled2 = listWidget_ratio->isSortingEnabled();
+        listWidget_ratio->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem33 = listWidget_ratio->item(0);
+        ___qlistwidgetitem33->setText(QCoreApplication::translate("Form_conf_speed", "1 : 1", nullptr));
+        QListWidgetItem *___qlistwidgetitem34 = listWidget_ratio->item(1);
+        ___qlistwidgetitem34->setText(QCoreApplication::translate("Form_conf_speed", "1 : 2", nullptr));
+        listWidget_ratio->setSortingEnabled(__sortingEnabled2);
+
+        label_shave->setText(QCoreApplication::translate("Form_conf_speed", "Shave", nullptr));
+
+        const bool __sortingEnabled3 = listWidget_shave->isSortingEnabled();
+        listWidget_shave->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem35 = listWidget_shave->item(0);
+        ___qlistwidgetitem35->setText(QCoreApplication::translate("Form_conf_speed", "320 mm", nullptr));
+        QListWidgetItem *___qlistwidgetitem36 = listWidget_shave->item(1);
+        ___qlistwidgetitem36->setText(QCoreApplication::translate("Form_conf_speed", "200 mm", nullptr));
+        listWidget_shave->setSortingEnabled(__sortingEnabled3);
+
+        label_bus->setText(QCoreApplication::translate("Form_conf_speed", "Bus", nullptr));
+
+        const bool __sortingEnabled4 = listWidget_bus->isSortingEnabled();
+        listWidget_bus->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem37 = listWidget_bus->item(0);
+        ___qlistwidgetitem37->setText(QCoreApplication::translate("Form_conf_speed", "ModBus", nullptr));
+        QListWidgetItem *___qlistwidgetitem38 = listWidget_bus->item(1);
+        ___qlistwidgetitem38->setText(QCoreApplication::translate("Form_conf_speed", "CanBus", nullptr));
+        listWidget_bus->setSortingEnabled(__sortingEnabled4);
+
     } // retranslateUi
 
 };
@@ -532,4 +598,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // FORM_CONF_SPEEDROTWBD_H
+#endif // FORM_CONF_SPEEDQBFHMK_H
