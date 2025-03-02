@@ -10,6 +10,10 @@
 //#include <wiringPi.h>
 //#include <wiringPiI2C.h>
 #include <QTimer>
+//#include <QModbus>
+//#include <libmodbus.h>
+#include <QModbusRtuSerialMaster>
+
 
 const int PULSES_PER_REVOLUTION = 2048;
 const double PULLEY_DIAMETER_1 = 320.0;
@@ -25,11 +29,22 @@ MainWindow::MainWindow(QWidget *parent)
     , form_help(new QWidget())  // Инициализируем форму помощи
     , animation(new QPropertyAnimation(this))
     , isMoving(false)
+    , messageWindow(new MessageWindow(this))
+    , isMessageWindowVisible(false)
+
 {
     ui->setupUi(this);
     // Инициализация таймера
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateSpeed);
+    // Связываем кнопку для включения/выключения окна сообщений
+    connect(ui->checkBox_bus, &QPushButton::toggled, this, &MainWindow::toggleMessageWindow);
+
+    // Таймер для чтения данных с шины
+    //QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::readDataFromBus);
+    //timer->start(1000);  // Чтение данных каждую секунду
+
     timer->start(1000);  // Обновление каждую секунду
 
     // Настраиваем UI для формы конфигурации скорости
@@ -94,7 +109,66 @@ void MainWindow::on_action_Help_triggered()
 {
     form_help->show();
 }
+void MainWindow::toggleMessageWindow(bool checked) {
+    if (checked) {
+        messageWindow->show();  // Показать окно
+        isMessageWindowVisible = true;
+    } else {
+        messageWindow->hide();  // Скрыть окно
+        isMessageWindowVisible = false;
+    }
+}
 
+void MainWindow::readDataFromBus() {
+    // Здесь будет код для чтения данных с CAN или ModBus
+    // Пример:
+    QString message = "Пример сообщения с шины";
+    if (isMessageWindowVisible) {
+        messageWindow->appendMessage(message);  // Вывод сообщения в окно
+    }
+}
+
+    /*
+    void MainWindow::readDataFromBus() {
+    QModbusRtuSerialMaster *modbusDevice = new QModbusRtuSerialMaster(this);
+    modbusDevice->setConnectionParameter(QModbusDevice::SerialPortNameParameter, "/dev/ttyUSB0");
+    modbusDevice->setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QSerialPort::Baud9600);
+    modbusDevice->setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QSerialPort::Data8);
+    modbusDevice->setConnectionParameter(QModbusDevice::SerialParityParameter, QSerialPort::NoParity);
+    modbusDevice->setConnectionParameter(QModbusDevice::SerialStopBitsParameter, QSerialPort::OneStop);
+
+    if (!modbusDevice->connectDevice()) {
+        qDebug() << "Ошибка подключения к ModBus устройству!";
+        return;
+    }
+
+    // Чтение данных
+    QModbusDataUnit request(QModbusDataUnit::InputRegisters, 0, 10);  // Чтение 10 регистров
+    if (auto *reply = modbusDevice->sendReadRequest(request, 1)) {
+        if (!reply->isFinished()) {
+            connect(reply, &QModbusReply::finished, this, [this, reply]() {
+                if (reply->error() == QModbusDevice::NoError) {
+                    const QModbusDataUnit unit = reply->result();
+                    QString message = "Данные: ";
+                    for (uint i = 0; i < unit.valueCount(); ++i) {
+                        message += QString::number(unit.value(i)) + " ";
+                    }
+                    if (isMessageWindowVisible) {
+                        messageWindow->appendMessage(message);  // Вывод сообщения в окно
+                    }
+                } else {
+                    qDebug() << "Ошибка чтения данных: " << reply->errorString();
+                }
+                reply->deleteLater();
+            });
+        } else {
+            delete reply;
+        }
+    } else {
+        qDebug() << "Ошибка отправки запроса!";
+    }
+}
+*/
 void MainWindow::on_radioButton_opcl_clicked()
 {
     if (ui->radioButton_opcl->isChecked()) {
@@ -104,8 +178,8 @@ void MainWindow::on_radioButton_opcl_clicked()
     }
     repaint();
 }
-/*
- speed
+
+ //speed
 double calculateLiftSpeed(int pulsesPerSecond, double pulleyDiameter, int gearRatio) {
     double pulleyDiameterMeters = pulleyDiameter / 1000.0;
     double circumference = M_PI * pulleyDiameterMeters;
@@ -113,7 +187,7 @@ double calculateLiftSpeed(int pulsesPerSecond, double pulleyDiameter, int gearRa
     speed = round(speed * 100) / 100;
     return speed;
 }
-
+/*
 // Инициализация I2C
 int initI2C() {
     int fd = wiringPiI2CSetup(PCF8574_ADDRESS);
@@ -127,20 +201,22 @@ int initI2C() {
 int readI2CData(int fd) {
     return wiringPiI2CRead(fd);
 }
-
+*/
 // Обновление скорости
 void MainWindow::updateSpeed() {
-    int fd = initI2C();
+    //int fd = initI2C();
+    int fd =20;
     if (fd == -1) return;
 
-    int pulsesPerSecond = readI2CData(fd);
+    //int pulsesPerSecond = readI2CData(fd);
+    int pulsesPerSecond = 2048;
     double pulleyDiameter = PULLEY_DIAMETER_1;
-    int gearRatio = 1;
+    int gearRatio = 2;
 
     double speed = calculateLiftSpeed(pulsesPerSecond, pulleyDiameter, gearRatio);
-    ui->label_speed->setText(QString::number(speed, 'f', 2) + " м/с");
+    ui->label_speed_mc->setText(QString::number(speed, 'f', 2) + " м/с");
 }
-*/
+
 
 void MainWindow::on_actionconfig_triggered()
 {

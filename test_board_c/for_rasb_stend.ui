@@ -953,6 +953,7 @@
     <addaction name="actionconfig"/>
     <addaction name="actionStart"/>
     <addaction name="actionStop"/>
+    <addaction name="actionSim_ulator"/>
     <addaction name="actionexit"/>
    </widget>
    <addaction name="menumenu"/>
@@ -981,6 +982,11 @@
   <action name="action_Help">
    <property name="text">
     <string>&amp;Help</string>
+   </property>
+  </action>
+  <action name="actionSim_ulator">
+   <property name="text">
+    <string>Sim&amp;ulator</string>
    </property>
   </action>
  </widget>

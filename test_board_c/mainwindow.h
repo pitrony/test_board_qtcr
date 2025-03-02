@@ -5,6 +5,7 @@
 #include "ui_form_conf_speed.h"
 //#include "ui_form_help.h"
 #include <QPropertyAnimation>
+#include "messagewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,6 +35,9 @@ private slots:
     void writeSettings();
     void on_radioButton_light_clicked();
     void updateSpeed();  // Слот для обновления скорости
+    void toggleMessageWindow(bool checked);  // Включение/выключение окна сообщений
+    void readDataFromBus();  // Чтение данных с шины
+
 
 private:
     Ui::MainWindow *ui;
@@ -42,4 +46,7 @@ private:
     QWidget *form_help;  // Окно помощи
     QPropertyAnimation *animation;  // Анимация для перемещения картинки
     bool isMoving;  // Флаг для отслеживания движения
+    MessageWindow *messageWindow;  // Окно для отображения сообщений
+    bool isMessageWindowVisible;   // Флаг видимости окна
+
 };

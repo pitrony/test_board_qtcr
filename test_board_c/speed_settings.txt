@@ -1,7 +1,7 @@
 rh_l=0
 rf_l=0
 ry_l=1
-rh_f=1
+rh_f=0
 rf_f=0
 ry_f=0
 rh_ret=0

@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'for_rasb_stendzknCOu.ui'
+** Form generated from reading UI file 'for_rasb_stendmdsaoV.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef FOR_RASB_STENDZKNCOU_H
-#define FOR_RASB_STENDZKNCOU_H
+#ifndef FOR_RASB_STENDMDSAOV_H
+#define FOR_RASB_STENDMDSAOV_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -35,6 +35,7 @@ public:
     QAction *actionStart;
     QAction *actionStop;
     QAction *action_Help;
+    QAction *actionSim_ulator;
     QWidget *centralwidget;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
@@ -104,6 +105,8 @@ public:
         actionStop->setObjectName("actionStop");
         action_Help = new QAction(MainWindow);
         action_Help->setObjectName("action_Help");
+        actionSim_ulator = new QAction(MainWindow);
+        actionSim_ulator->setObjectName("actionSim_ulator");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayoutWidget = new QWidget(centralwidget);
@@ -441,6 +444,7 @@ public:
         menumenu->addAction(actionconfig);
         menumenu->addAction(actionStart);
         menumenu->addAction(actionStop);
+        menumenu->addAction(actionSim_ulator);
         menumenu->addAction(actionexit);
 
         retranslateUi(MainWindow);
@@ -457,6 +461,7 @@ public:
         actionStart->setText(QCoreApplication::translate("MainWindow", "&Start", nullptr));
         actionStop->setText(QCoreApplication::translate("MainWindow", "S&top", nullptr));
         action_Help->setText(QCoreApplication::translate("MainWindow", "&Help", nullptr));
+        actionSim_ulator->setText(QCoreApplication::translate("MainWindow", "Sim&ulator", nullptr));
         radioButton_817->setText(QCoreApplication::translate("MainWindow", " 817", nullptr));
         radioButton_818->setText(QCoreApplication::translate("MainWindow", " 818", nullptr));
         radioButton_rez1->setText(QCoreApplication::translate("MainWindow", " rez1", nullptr));
@@ -506,4 +511,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // FOR_RASB_STENDZKNCOU_H
+#endif // FOR_RASB_STENDMDSAOV_H
