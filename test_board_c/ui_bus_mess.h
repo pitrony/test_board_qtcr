@@ -29,7 +29,7 @@ public:
         Form_messages->setStyleSheet(QString::fromUtf8("background:rgb(255, 170, 127)"));
         label = new QLabel(Form_messages);
         label->setObjectName("label");
-        label->setGeometry(QRect(40, 80, 531, 351));
+        label->setGeometry(QRect(140, 180, 531, 351));
 
         retranslateUi(Form_messages);
 

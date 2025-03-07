@@ -807,6 +807,44 @@ border: 1px solid white</string>
     </property>
    </item>
   </widget>
+  <widget class="QLabel" name="label_enc">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>380</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Encoder</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_enc">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>370</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>2048</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1024</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>500</string>
+    </property>
+   </item>
+  </widget>
   <zorder>gridLayoutWidget</zorder>
   <zorder>label_fls</zorder>
   <zorder>lineEdit_2</zorder>
@@ -823,6 +861,8 @@ border: 1px solid white</string>
   <zorder>listWidget_shave</zorder>
   <zorder>label_bus</zorder>
   <zorder>listWidget_bus</zorder>
+  <zorder>label_enc</zorder>
+  <zorder>listWidget_enc</zorder>
  </widget>
  <resources/>
  <connections>

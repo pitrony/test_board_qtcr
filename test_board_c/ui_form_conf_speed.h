@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'form_conf_speedqbfHmK.ui'
+** Form generated from reading UI file 'form_conf_speedBWxQNX.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef FORM_CONF_SPEEDQBFHMK_H
-#define FORM_CONF_SPEEDQBFHMK_H
+#ifndef FORM_CONF_SPEEDBWXQNX_H
+#define FORM_CONF_SPEEDBWXQNX_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -81,6 +81,8 @@ public:
     QListWidget *listWidget_shave;
     QLabel *label_bus;
     QListWidget *listWidget_bus;
+    QLabel *label_enc;
+    QListWidget *listWidget_enc;
 
     void setupUi(QDialog *Form_conf_speed)
     {
@@ -413,6 +415,15 @@ public:
         new QListWidgetItem(listWidget_bus);
         listWidget_bus->setObjectName("listWidget_bus");
         listWidget_bus->setGeometry(QRect(670, 330, 121, 31));
+        label_enc = new QLabel(Form_conf_speed);
+        label_enc->setObjectName("label_enc");
+        label_enc->setGeometry(QRect(610, 380, 71, 16));
+        listWidget_enc = new QListWidget(Form_conf_speed);
+        new QListWidgetItem(listWidget_enc);
+        new QListWidgetItem(listWidget_enc);
+        new QListWidgetItem(listWidget_enc);
+        listWidget_enc->setObjectName("listWidget_enc");
+        listWidget_enc->setGeometry(QRect(710, 370, 101, 31));
         gridLayoutWidget->raise();
         label_fls->raise();
         lineEdit_2->raise();
@@ -429,6 +440,8 @@ public:
         listWidget_shave->raise();
         label_bus->raise();
         listWidget_bus->raise();
+        label_enc->raise();
+        listWidget_enc->raise();
 
         retranslateUi(Form_conf_speed);
         QObject::connect(pushButton_Ok, &QPushButton::clicked, label_saved, qOverload<>(&QLabel::hide));
@@ -588,6 +601,18 @@ public:
         ___qlistwidgetitem38->setText(QCoreApplication::translate("Form_conf_speed", "CanBus", nullptr));
         listWidget_bus->setSortingEnabled(__sortingEnabled4);
 
+        label_enc->setText(QCoreApplication::translate("Form_conf_speed", "Encoder", nullptr));
+
+        const bool __sortingEnabled5 = listWidget_enc->isSortingEnabled();
+        listWidget_enc->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem39 = listWidget_enc->item(0);
+        ___qlistwidgetitem39->setText(QCoreApplication::translate("Form_conf_speed", "2048", nullptr));
+        QListWidgetItem *___qlistwidgetitem40 = listWidget_enc->item(1);
+        ___qlistwidgetitem40->setText(QCoreApplication::translate("Form_conf_speed", "1024", nullptr));
+        QListWidgetItem *___qlistwidgetitem41 = listWidget_enc->item(2);
+        ___qlistwidgetitem41->setText(QCoreApplication::translate("Form_conf_speed", "500", nullptr));
+        listWidget_enc->setSortingEnabled(__sortingEnabled5);
+
     } // retranslateUi
 
 };
@@ -598,4 +623,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // FORM_CONF_SPEEDQBFHMK_H
+#endif // FORM_CONF_SPEEDBWXQNX_H
