@@ -709,12 +709,75 @@ void MainWindow::toggleMessageWindow(bool checked) {
 }
 
 void MainWindow::readDataFromBus() {
-    QString message = "Пример сообщения с шины";
+  /*  QString message = "Пример сообщения с шины";
     if (isMessageWindowVisible && messageWindow) {
         messageWindow->appendMessage(message);  // Вывод сообщения в окно
     } else {
         qDebug() << "Окно сообщений скрыто или не инициализировано!";
     }
+
+#include <linux/can.h>
+#include <linux/can/raw.h>
+#include <sys/socket.h>
+#include <unistd.h>
+
+void MainWindow::readDataFromBus() {
+    int sock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+    if (sock < 0) {
+        qDebug() << "Ошибка создания сокета CAN!";
+        return;
+    }
+
+    struct can_frame frame;
+    int nbytes = read(sock, &frame, sizeof(struct can_frame));
+    if (nbytes < 0) {
+        qDebug() << "Ошибка чтения данных с CAN!";
+        close(sock);
+        return;
+    }
+
+    QString id = QString("0x%1").arg(frame.can_id, 0, 16);  // ID сообщения
+    QString data = QString("0x%1").arg(frame.data[0], 0, 16);  // Данные сообщения (первый байт)
+
+    if (isMessageWindowVisible) {
+        messageWindow->appendMessage(id, data);  // Вывод сообщения в таблицу
+    }
+
+    close(sock);
+}
+
+
+*/
+    // Здесь будет код для чтения данных с CAN или ModBus
+    // Пример:
+
+    /*
+    // Пример данных с шины)
+    QByteArray data;
+    data.append(0x12);  // Первый байт: этаж и состояние дверей
+    data.append(0x00);  // Второй байт: null
+    data.append(0x31);  // Третий байт: "E"
+    data.append(0x34);  // Четвертый байт: "G"
+    data.append(0x19);  // Пятый байт: направление
+    data.append(0x00);  // Шестой байт: null
+    data.append(0x00);  // Седьмой байт: null
+    data.append(0x00);  // Восьмой байт: null
+
+    if (isMessageWindowVisible) {
+        messageWindow->appendMessage(data);  // Вывод сообщения в таблицу
+    }
+}
+
+
+
+    */
+    QString id = "0x100";       // ID сообщения
+    QString data = "0x100";      // Данные сообщения
+
+    if (isMessageWindowVisible) {
+        messageWindow->appendMessage(id, data);  // Вывод сообщения в таблицу
+    }
+
 }
 
 

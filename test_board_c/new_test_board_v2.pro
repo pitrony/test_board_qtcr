@@ -11,11 +11,13 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    messagewindow.cpp
+    messagewindow.cpp \
+    messdecoder.cpp
 
 HEADERS += \
     mainwindow.h \
-    messagewindow.h
+    messagewindow.h \
+    messdecoder.h
 
 TRANSLATIONS += \
     new_test_board_v2_ru_RU.ts
