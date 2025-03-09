@@ -116,5 +116,8 @@ private:
     void updateSettings(int gearRatio, double PULLEY_DIAMETER, int PULSES_PER_REVOLUTION);
     double calculateLiftSpeed(int pulsesPerSecond);
     QTimer *closeTimer;  // Таймер для задержки закрытия формы
+    void send_mqtt(const std::string& topic, int data);
+    void updateUI(int data1, int data2, int data3);
+    void sendMQTT(int data1, int data2, int data3);
 
 };
