@@ -76,6 +76,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -119,5 +120,12 @@ private:
     void send_mqtt(const std::string& topic, int data);
     void updateUI(int data1, int data2, int data3);
     void sendMQTT(int data1, int data2, int data3);
+    int data1=255;
+    int _data1=0;
+    int data2=255;
+    int _data2=0;
+    int data3=255;
+    int _data3=0;
+    void readI2CData();
 
 };

@@ -1,8 +1,7 @@
 #include "mainwindow.h"
-#include "headers.h"
 
 
-//void decode(_word1, _word2,_data1, _data2){}
+//void decode(data1, data2, data3){}
 /*
 void decode(_word1, _word2,_data1, _data2)
 {

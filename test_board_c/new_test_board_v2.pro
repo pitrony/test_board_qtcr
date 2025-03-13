@@ -8,8 +8,8 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 # Подключение Paho MQTT
-LIBS += -lpaho-mqttpp3 -lpaho-mqtt3a
-INCLUDEPATH += "C:/Qt/paho.mqtt.cpp-master/include" # Укажите путь к заголовочным файлам Paho MQTT
+#LIBS += -lpaho-mqttpp3 -lpaho-mqtt3a
+#INCLUDEPATH += "C:/Qt/pahomqttcpp-master/include/mqtt" # Укажите путь к заголовочным файлам Paho MQTT
 
 # Подключение CAN (SocketCAN для Linux или PCAN для Windows)
 #unix: LIBS += -lsocketcan  # Для Linux

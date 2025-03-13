@@ -12,8 +12,12 @@
 #include <QModbusReply>
 #include <QVariant>
 #include <QSerialPort>
+#include <QStandardItemModel>
+
 //#include <mqtt/async_client.h>
 //#include <mqtt/client.h>
+//#include <wiringPiI2C.h>
+//#include <unistd.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow),
@@ -46,12 +50,20 @@ MainWindow::MainWindow(QWidget *parent)
     // Инициализация таймера
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateSpeed);
+    //timer2 = new QTimer(this);
+    //QTimer *timer2 = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::readI2CData);
+    //timer2->start(50); // 50 мс = 0.05 секунд
+
+    //connect(timer, &QTimer::timeout, this, &MainWindow::readI2CData);
+
     connect(ui->checkBox_bus, &QPushButton::toggled, this, &MainWindow::toggleMessageWindow);
     connect(timer, &QTimer::timeout, this, &MainWindow::readDataFromBus);
     //timer->start(1000);  // Чтение данных каждую секунду
 
-    timer->start(50);  // Обновление каждую 0.05 секунду
-
+    timer->start(5000);  // Обновление каждую 5 секунду
+    QStandardItemModel *model = new QStandardItemModel(this);
+    ui->listView_alarms->setModel(model);
     // Настраиваем UI для формы конфигурации скорости
     // Настройка формы conf_speed
     ui_conf_speed->setupUi(form_conf_speed);
@@ -154,30 +166,36 @@ MainWindow::~MainWindow() {
     delete form_help;
     delete animation;
 }
-/*
-#include <wiringPiI2C.h>
-#include <unistd.h>
+
+
 
 void MainWindow::readI2CData() {
-    int fd1 = wiringPiI2CSetup(0x20); // Адрес первого устройства
-    int fd2 = wiringPiI2CSetup(0x24); // Адрес второго устройства
-    int fd3 = wiringPiI2CSetup(0x22); // Адрес третьего устройства
+//    int fd1 = wiringPiI2CSetup(0x20); // Адрес первого устройства
+  //  int fd2 = wiringPiI2CSetup(0x24); // Адрес второго устройства
+    //int fd3 = wiringPiI2CSetup(0x22); // Адрес третьего устройства
 
-    int data1 = wiringPiI2CRead(fd1);
-    int data2 = wiringPiI2CRead(fd2);
-    int data3 = wiringPiI2CRead(fd3);
-
+    //int data1 = wiringPiI2CRead(fd1);
+    //int data2 = wiringPiI2CRead(fd2);
+    //int data3 = wiringPiI2CRead(fd3);
+   // data1=255;
+    //data2=255;
+    // data3=255;
     // Декодирование данных
-    decode(&word1, &word2, data1, data2);
+//if(data1!=_data1 || data2!=_data2 || data3!=_data3) {
+    //decode(data1, data2, data3);
 
     // Обновление интерфейса
     updateUI(data1, data2, data3);
+   // updateUI(255, 255, 255);
 
     // Отправка изменений по MQTT
-    sendMQTT(data1, data2, data3);
+    //sendMQTT(data1, data2, data3);
+//}
+_data1=data1;
+_data2=data2;
+_data3=data3;
 }
 
-*/
 /*
 void MainWindow::send_mqtt(const std::string& topic, int data) {
     mqtt::client client("tcp://localhost:1883", "client_id");
@@ -214,12 +232,52 @@ void MainWindow::sendMQTT(int data1, int data2, int data3) {
 
 void MainWindow::updateUI(int data1, int data2, int data3) {
     // Обновление радиобоксов
-    if (data1 & 0x01) ui->radioButton_500->setChecked(true);
-    if (data2 & 0x02) ui->radioButton_501->setChecked(true);
+    if (data1 & 0x08) ui->radioButton_ru1->setChecked(true);
+    if (data1 & 0x10) ui->radioButton_ru2->setChecked(true);
+    if (data1 & 0x20) ui->radioButton_krc->setChecked(true);
+    if (data1 & 0x40) ui->radioButton_frn->setChecked(true);
+    if (data1 & 0x80) ui->radioButton_ptc->setChecked(true);
 
-    // Обновление label_alarm
-//    if (data3 & 0x04) ui->listView_alarms->item("Ошибка!");
-  //  else ui->listView_alarms->setText("Нет ошибок");
+    if (data2 & 0x01) ui->radioButton_ins->setChecked(true);
+    if (data2 & 0x02) ui->radioButton_500->setChecked(true);
+    if (data2 & 0x04) ui->radioButton_501->setChecked(true);
+    if (data2 & 0x08) ui->radioButton_ml1->setChecked(true);
+    if (data2 & 0x10) ui->radioButton_ml2->setChecked(true);
+    if (data2 & 0x20) ui->radioButton_opcl->setChecked(true);
+    if (data2 & 0x40) ui->radioButton_818->setChecked(true);
+    if (data2 & 0x80) ui->radioButton_817->setChecked(true);
+
+    if (data3 & 0x01) ui->radioButton_rgk->setChecked(true);
+    if (data3 & 0x02) ui->radioButton_fri->setChecked(true);
+    if (data3 & 0x04) ui->radioButton_ppp->setChecked(true);
+    if (data3 & 0x08) ui->radioButton_120->setChecked(true);
+    if (data3 & 0x10) ui->radioButton_130->setChecked(true);
+    if (data3 & 0x20) ui->radioButton_140->setChecked(true);
+    if (data3 & 0x40) ui->radioButton_light->setChecked(true);
+    if (data3 & 0x80) ui->radioButton_rez1->setChecked(true);
+
+    // Обновление alarm
+    if (data1 & 0x80) {
+        QStandardItemModel *model = qobject_cast<QStandardItemModel*>(ui->listView_alarms->model());
+        if (model) {
+            QStandardItem *item = new QStandardItem("Ошибка ptc!");
+            model->appendRow(item); // Добавляем новый элемент в список
+        }
+    }
+
+    //if ((data1 & 0x80)==true) {
+       //ui->listView_alarms->model()->insertRow(ui->listView_alarms->model()->rowCount()); // Добавляем новую строку
+        //QModelIndex index = ui->listView_alarms->model()->index(ui->listView_alarms->model()->rowCount() - 1, 0); // Получаем индекс новой строки
+       //ui->listView_alarms->model()->setData(index, "Ptc hight temp"); // Устанавливаем текст в новую строку
+    //}
+
+
+    // if (data3 & 0x04) ui->listView_alarms->setText("Ошибка!");
+  //model->insertRow(model->rowCount());
+    //QModelIndex index = model->index(model->rowCount()-1)
+                        //model->setData(index, str);
+
+    //else ui->listView_alarms->setText("Нет ошибок");
 }
 
 
@@ -241,6 +299,7 @@ void MainWindow::readDataFromBus() {
   /*  QString message = "Пример сообщения с шины";
     if (isMessageWindowVisible && messageWindow) {
         messageWindow->appendMessage(message);  // Вывод сообщения в окно
+
     } else {
         qDebug() << "Окно сообщений скрыто или не инициализировано!";
     }
